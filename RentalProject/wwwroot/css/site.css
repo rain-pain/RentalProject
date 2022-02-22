@@ -1,0 +1,156 @@
+/* Navbar */
+nav {
+    background-color: #071017 !important;
+    border-bottom: 1px solid #dde2ab;
+    line-height: 40px;
+}
+
+.nav-item .nav-link {
+    text-align: center;
+    color: #dde2ab;
+    font-family: 'EB Garamond', serif;
+    font-size: 15px;
+    margin-left: 30px;
+    padding: 0 !important;
+    transition: color .1s linear;
+    opacity: .9;
+}
+
+.nav-item .nav-link:hover {
+    color: #ddd77a;
+}
+
+.navbar ul {
+    padding: 0;
+    margin: 0 !important;
+    list-style: none;
+}
+
+.navbar li {
+    font-family: 'EB Garamond', serif;
+    color: #dde2ab;
+    font-size: 14px;
+}
+
+.name {
+    white-space: nowrap;
+    text-align: center;
+    font-size: 21px !important;
+    color: #c3ae5a;
+    text-transform: uppercase;
+    font-family: 'EB Garamond', serif;
+    text-decoration: none;
+}
+
+.name:hover {
+    color: #c3ae5a;
+    text-decoration: none;
+}
+
+/* Body */
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    background-color: #061117;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #c3ae5a;
+}
+
+p {
+    color: #dde2ab;
+}
+
+.link {
+    color: #dde2ab;
+}
+
+.link:hover{
+    color: #dde2ab;
+    opacity: .8;
+}
+
+label {
+    color: #fff;
+}
+
+.indent {
+    text-indent: 1.5em;
+}
+
+/*Card*/
+.card-header, .card-footer {
+    background-color: #241c1c;
+}
+
+.card-header h1, h2, h3, h4, h5, h6 {
+    font-family: 'Shippori Antique', sans-serif;
+    font-weight: bold;
+}
+
+.card-footer a {
+    font-weight: bold;
+    font-family: 'Titillium Web', sans-serif;
+    color: #c3ae5a !important;
+}
+
+.card-footer span {
+    font-weight: normal;
+    margin-left: 5px;
+    color: #b4b873;
+}
+
+/* Footer */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    background-color: #071017;
+    border-top: 1px solid #261e1e !important;
+}
+
+.footer a {
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
+    opacity: .7;
+    color: #c3ae5a !important;
+}
+
+.btn-main {
+    color: #071017;
+    font-weight: bolder;
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color: #c3ae5a;
+    transition: background-color .2s linear;
+}
+
+.btn-main:hover {
+    background-color: #dec45b;
+}
+
+label {
+    color: #dde2ab;
+}

@@ -1,0 +1,25 @@
+﻿@model ApplicationUser
+
+<h3 class="text-center">Забронированные вами автомобили</h3>
+<br />  
+<div class="row row-cols-1 row-cols-md-4">
+    @foreach (var car in Model.Cars.ToList())
+    {
+        var photoPath = "~/images/" + (car.ImagePath ?? "no_image.jpg");
+        <div class="col">
+            <div class="card mb-3 border-0" style="max-width:18rem;">
+                <div class="card-header">
+                    <h4 class="text-center" style="font-weight: bold;">@car.Model </h4>
+                </div>
+
+                <img class="card-img-top imageThumbnail" src="@photoPath" asp-append-version="true" />
+
+                <div class="card-footer">
+                    <a style="font-weight:bold;">Цена: @car.Price bn </a>
+                    <a asp-controller="Cars" asp-action="DeleteCarFromUser"  asp-route-userName="@User.Identity.Name" asp-route-carId="@car.Id"
+                        class="btn btn-sm btn-danger" style="margin-left:60px;">Remove</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

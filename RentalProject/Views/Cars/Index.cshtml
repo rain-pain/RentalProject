@@ -1,0 +1,54 @@
+﻿@model IEnumerable<RentalProject.Models.Car>
+
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center">
+    <h3>Доступные автомобили</h3>
+    @if(User.IsInRole("Admin"))
+    {
+        <a class="btn btn-main" asp-action="Create">Add new car</a>
+    }
+</div>
+
+<br />
+<div class="row row-cols-1 row-cols-md-4" style="margin-bottom: 60px;">
+    @foreach (var car in Model)
+    {
+        var photoPath = "~/images/" + (car.ImagePath ?? "no_image.jpg");
+        <div class="col">
+            <div class="card mb-3 border-0" style="max-width:18rem;">
+                <div class="card-header text-center">
+                    <h4 style="font-weight: bold;">@car.Model </h4>
+                    @if(User.IsInRole("Admin"))
+                    {
+                        <a class="btn btn-primary btn-sm" style="opacity: .8 !important;" asp-action="Edit" asp-route-id="@car.Id">Edit</a>
+                        <a class="btn btn-warning btn-sm" style="opacity: .8 !important;" asp-action="Delete" asp-route-id="@car.Id">Delete</a>
+                    }
+                </div>
+
+                <img class="card-img-top imageThumbnail" src="@photoPath" asp-append-version="true" />
+
+                <div class="card-footer">
+                    <a style="font-weight:bold;">Цена: @car.Price bn </a>
+                    @if(@car.BuyerId != null)
+                    {
+                        <a class="btn btn-sm btn-danger" style="margin-left:60px;">Bronned</a>
+                    }
+                    else if (SignInManager.IsSignedIn(User))
+                    {
+                        <a asp-controller="Cars" asp-action="AddCarToUser"  asp-route-userName="@User.Identity.Name" asp-route-carId="@car.Id"
+                        class="btn btn-sm btn-success" style="margin-left:60px;">Reserve</a>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>
